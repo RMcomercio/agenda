@@ -8,7 +8,7 @@ db.sqlite3
 static/
 media/
 venv/
-
+local_settings.py
 # Backup files #
 *.bak
 
