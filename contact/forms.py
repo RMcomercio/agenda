@@ -1,29 +1,37 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from . import models
+from django.contrib.auth.forms import UserCreationForm
 
 class ContactForm(forms.ModelForm):
+    picture = forms.ImageField(
+        widget = forms.FileInput(
+            attrs={
+                'accept': 'image/*', 
+            }
+        )
+    )
     #pegou o campo do models e personalizou ele.
-    first_name = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                'class':'classe-a classe-b',
-                'placeholder':'campo novo no formulario'
-            }
-        ),
-        label='Primeiro Nome',
-        help_text='um texto de ajuda a ser exibido no formulario',
-    )
-    Novo = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                'class':'classe-a classe-b',
-                'placeholder':'campo novo no formulario'
-            }
-        ),
+    # first_name = forms.CharField(
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'class':'classe-a classe-b',
+    #             'placeholder':'campo novo no formulario',
+    #         }
+    #     ),
+    #     label='Primeiro Nome',
+    #     help_text='um texto de ajuda a ser exibido no formulario',
+    # )
+    # Novo = forms.CharField(
+    #     widget=forms.TextInput(
+    #         attrs={
+    #             'class':'classe-a classe-b',
+    #             'placeholder':'campo novo no formulario'
+    #         }
+    #     ),
        
-        help_text='testando campo',
-    )
+    #     help_text='testando campo',
+    # )
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -40,6 +48,8 @@ class ContactForm(forms.ModelForm):
             'email',
             'description',
             'category',
+            'picture',
+
 
         )
         # widgets = {
@@ -87,4 +97,5 @@ class ContactForm(forms.ModelForm):
 
         return cleaned_data
 
-
+class RegisterForm(UserCreationForm):
+    ...
