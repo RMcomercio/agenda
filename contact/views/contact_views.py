@@ -44,6 +44,7 @@ def search(request):
     search_value = request.GET.get('q', '').strip()
     if search_value =='':
         return redirect('contact:index')
+        
 #consulta Sql usando OR importa Q e usar o | 
     contacts = Contact.objects\
         .filter(show=True)\

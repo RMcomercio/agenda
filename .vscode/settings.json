@@ -14,7 +14,6 @@
   "code-runner.runInTerminal": true,
   "code-runner.ignoreSelection": true,
   "editor.fontFamily": "'Fira Code', Consolas, 'Dank Mono', 'Source Code Pro', 'Fira Code', Menlo, 'Inconsolata', 'Droid Sans Mono', 'DejaVu Sans Mono', 'Ubuntu Mono', 'Courier New', Courier, Monaco, monospace",
-  "terminal.integrated.fontFamily": "",
   "editor.fontLigatures": false,
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8",
@@ -28,6 +27,7 @@
     }
   },
   "python.languageServer": "Pylance",
+  "python.analysis.autoImportCompletions": true,
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "python.analysis.diagnosticSeverityOverrides": {
@@ -39,5 +39,10 @@
   },
   "python.defaultInterpreterPath": ".\\venv\\bin\\python",
   "python.analysis.typeCheckingMode": "standard",
-  "editor.defaultFormatter": "ms-python.autopep8"
-}
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSaveMode": "modifications",
+  "djangointellisense.settingsModule": "project.settings",
+  "djangointellisense.debugMessages": true,
+  
+  }
